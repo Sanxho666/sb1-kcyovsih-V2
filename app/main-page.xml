@@ -1,0 +1,12 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Desktop Browser" />
+    
+    <GridLayout rows="auto, *">
+        <GridLayout row="0" columns="*, auto" class="p-2 bg-gray-100">
+            <TextField col="0" text="{{ url }}" hint="Enter URL" returnKeyType="go" returnPress="{{ onNavigate }}" class="p-2 bg-white rounded" />
+            <Button col="1" text="Go" tap="{{ onNavigate }}" class="ml-2 bg-blue-500 text-white rounded px-4" />
+        </GridLayout>
+        
+        <WebView row="1" src="{{ webViewUrl }}" id="webView" loaded="{{ onWebViewLoaded }}" />
+    </GridLayout>
+</Page>
